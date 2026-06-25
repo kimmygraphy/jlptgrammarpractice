@@ -570,3 +570,90 @@ ruby rt {
   .form-grid { gap: 4px; }
   .form-btn { font-size: .76rem; padding: 4px 8px; }
 }
+
+/* ===== TAB BAR ===== */
+.tab-bar-wrap {
+  background: var(--paper-warm);
+  border-bottom: 2px solid var(--rule);
+  position: sticky;
+  top: 52px;
+  z-index: 90;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-bar-wrap::-webkit-scrollbar { display: none; }
+
+.tab-bar {
+  display: flex;
+  gap: 2px;
+  padding: 8px 16px 0;
+  max-width: 900px;
+  margin: 0 auto;
+  min-width: max-content;
+}
+
+.tab-btn {
+  font-family: var(--font-ui);
+  font-size: .78rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border: 1.5px solid var(--rule);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  background: var(--paper);
+  color: var(--ink-faint);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .12s, color .12s;
+}
+.tab-btn:hover { color: var(--ink); background: var(--rule-light); }
+.tab-btn.active {
+  background: var(--paper-card);
+  color: var(--ink);
+  border-color: var(--rule);
+  border-bottom-color: var(--paper-card);
+  position: relative;
+  bottom: -2px;
+  z-index: 1;
+}
+
+/* ===== TAB PANELS (inside control-panel) ===== */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* hon-type / conj-filter buttons — reuse form-btn style */
+.hon-type-btn, .conj-filter-btn {
+  font-family: var(--font-jp);
+  font-size: .82rem;
+  padding: 5px 10px;
+  border: 1.5px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--paper-card);
+  color: var(--ink-light);
+  cursor: pointer;
+  transition: all .15s;
+  user-select: none;
+}
+.hon-type-btn:hover, .conj-filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.hon-type-btn.active, .conj-filter-btn.active {
+  background: var(--ink); border-color: var(--ink); color: var(--paper); font-weight: 700;
+}
+
+/* ===== PATTERN CHIP ===== */
+.pattern-chip {
+  font-family: var(--font-jp);
+  font-size: .75rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1px 7px;
+  border-radius: 2px;
+}
+
+/* ===== HINT TEXT ===== */
+.hint-text {
+  font-size: .76rem;
+  color: var(--ink-faint);
+  margin-top: 6px;
+  font-family: var(--font-ui);
+}

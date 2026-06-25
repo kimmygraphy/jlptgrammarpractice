@@ -3,85 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>JLPT 동사 활용 트레이너</title>
+  <title>JLPT N4 종합 문법 드릴</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-inner">
-    <h1 class="site-title">JLPT 動詞活用トレーナー</h1>
-    <span class="site-subtitle">동사 활용 트레이너 · N5 / N4 / N3</span>
+    <h1 class="site-title">JLPT N4 文法ドリル</h1>
+    <span class="site-subtitle">종합 문법 드릴 · N5 / N4 / N3</span>
   </div>
 </header>
+
+<!-- ===== TABS ===== -->
+<div class="tab-bar-wrap">
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="verb">동사활용</button>
+    <button class="tab-btn" data-tab="potential">가능형</button>
+    <button class="tab-btn" data-tab="passive">수동형</button>
+    <button class="tab-btn" data-tab="causative">사역형</button>
+    <button class="tab-btn" data-tab="caus_pass">사역수동형</button>
+    <button class="tab-btn" data-tab="giving">수수표현</button>
+    <button class="tab-btn" data-tab="honorific">경어</button>
+    <button class="tab-btn" data-tab="conjecture">추측·전언</button>
+    <button class="tab-btn" data-tab="grammar">문형</button>
+    <button class="tab-btn" data-tab="comprehensive">종합</button>
+  </div>
+</div>
 
 <div class="app-wrapper">
 
   <!-- ===== CONTROL PANEL ===== -->
-  <section class="control-panel" aria-label="학습 설정">
+  <section class="control-panel">
 
-    <!-- 활용형 선택 -->
-    <div class="panel-section">
-      <div class="panel-label">활용형 선택</div>
-      <div class="form-grid">
-        <button class="form-btn" data-form="all">종합</button>
-        <button class="form-btn active" data-form="masu">ます형</button>
-        <button class="form-btn" data-form="masen">ません형</button>
-        <button class="form-btn" data-form="mashita">ました형</button>
-        <button class="form-btn" data-form="masen_deshita">ませんでした형</button>
-        <button class="form-btn" data-form="nai">ない형</button>
-        <button class="form-btn" data-form="nakatta">なかった형</button>
-        <button class="form-btn" data-form="te">て형</button>
-        <button class="form-btn" data-form="ta">た형</button>
-        <button class="form-btn" data-form="volitional">의지형</button>
-        <button class="form-btn" data-form="imperative">명령형</button>
-        <button class="form-btn" data-form="negative_imperative">부정명령형</button>
+    <!-- 동사활용 탭 전용 옵션 -->
+    <div class="tab-panel active" data-panel="verb">
+      <div class="panel-section">
+        <div class="panel-label">활용형 선택</div>
+        <div class="form-grid">
+          <button class="form-btn" data-form="all">종합</button>
+          <button class="form-btn active" data-form="masu">ます형</button>
+          <button class="form-btn" data-form="masen">ません형</button>
+          <button class="form-btn" data-form="mashita">ました형</button>
+          <button class="form-btn" data-form="masen_deshita">ませんでした형</button>
+          <button class="form-btn" data-form="nai">ない형</button>
+          <button class="form-btn" data-form="nakatta">なかった형</button>
+          <button class="form-btn" data-form="te">て형</button>
+          <button class="form-btn" data-form="ta">た형</button>
+          <button class="form-btn" data-form="volitional">의지형</button>
+          <button class="form-btn" data-form="imperative">명령형</button>
+          <button class="form-btn" data-form="negative_imperative">부정명령형</button>
+        </div>
       </div>
     </div>
 
-    <!-- JLPT 레벨 -->
+    <!-- 경어 탭 전용 옵션 -->
+    <div class="tab-panel" data-panel="honorific">
+      <div class="panel-section">
+        <div class="panel-label">경어 종류</div>
+        <div class="form-grid">
+          <button class="hon-type-btn active" data-htype="both">전체</button>
+          <button class="hon-type-btn" data-htype="respectful">존경어</button>
+          <button class="hon-type-btn" data-htype="humble">겸양어</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 추측·전언 탭 전용 옵션 -->
+    <div class="tab-panel" data-panel="conjecture">
+      <div class="panel-section">
+        <div class="panel-label">유형 선택</div>
+        <div class="form-grid">
+          <button class="conj-filter-btn active" data-ctype="all">전체</button>
+          <button class="conj-filter-btn" data-ctype="sou_conjecture">추측 そうだ</button>
+          <button class="conj-filter-btn" data-ctype="sou_hearsay">전언 そうだ</button>
+          <button class="conj-filter-btn" data-ctype="deshou">でしょう</button>
+          <button class="conj-filter-btn" data-ctype="kamoshirenai">かもしれない</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 종합 탭 전용 옵션 -->
+    <div class="tab-panel" data-panel="comprehensive">
+      <div class="panel-section">
+        <div class="panel-label">포함 영역</div>
+        <div class="options-row">
+          <label class="cb-label"><input type="checkbox" class="comp-mode-cb" value="verb" checked>동사활용</label>
+          <label class="cb-label"><input type="checkbox" class="comp-mode-cb" value="potential" checked>가능형</label>
+          <label class="cb-label"><input type="checkbox" class="comp-mode-cb" value="passive" checked>수동형</label>
+          <label class="cb-label"><input type="checkbox" class="comp-mode-cb" value="causative" checked>사역형</label>
+          <label class="cb-label"><input type="checkbox" class="comp-mode-cb" value="giving_receiving" checked>수수표현</label>
+          <label class="cb-label"><input type="checkbox" class="comp-mode-cb" value="conjecture" checked>추측·전언</label>
+          <label class="cb-label"><input type="checkbox" class="comp-mode-cb" value="grammar">문형</label>
+          <label class="cb-label"><input type="checkbox" class="comp-mode-cb" value="honorific">경어</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 공통 옵션 -->
     <div class="panel-section">
       <div class="panel-label">JLPT 레벨</div>
       <div class="options-row">
-        <label class="cb-label">
-          <input type="checkbox" class="level-cb" value="N5" checked>
-          <span class="level-n5">N5</span>
-        </label>
-        <label class="cb-label">
-          <input type="checkbox" class="level-cb" value="N4" checked>
-          <span class="level-n4">N4</span>
-        </label>
-        <label class="cb-label">
-          <input type="checkbox" class="level-cb" value="N3" checked>
-          <span class="level-n3">N3</span>
-        </label>
+        <label class="cb-label"><input type="checkbox" class="level-cb" value="N5" checked><span class="level-n5">N5</span></label>
+        <label class="cb-label"><input type="checkbox" class="level-cb" value="N4" checked><span class="level-n4">N4</span></label>
+        <label class="cb-label"><input type="checkbox" class="level-cb" value="N3" checked><span class="level-n3">N3</span></label>
       </div>
     </div>
 
-    <!-- 옵션 -->
     <div class="panel-section">
       <div class="panel-label">옵션</div>
       <div class="options-row">
-        <label class="cb-label">
-          <input type="checkbox" id="toggle-furigana" checked>
-          후리가나 표시
-        </label>
-        <label class="cb-label">
-          <input type="checkbox" id="toggle-frequent" checked>
-          빈출 동사 우선
-        </label>
-        <label class="cb-label">
-          <input type="checkbox" id="toggle-trap">
-          ⚠️ 함정동사 강화
-        </label>
-        <label class="cb-label">
-          <input type="checkbox" id="toggle-wrong" checked>
-          오답 우선 출제
-        </label>
+        <label class="cb-label"><input type="checkbox" id="toggle-furigana" checked>후리가나</label>
+        <label class="cb-label"><input type="checkbox" id="toggle-frequent" checked>빈출 우선</label>
+        <label class="cb-label"><input type="checkbox" id="toggle-trap">⚠️ 함정동사 강화</label>
+        <label class="cb-label"><input type="checkbox" id="toggle-wrong" checked>오답 우선</label>
       </div>
     </div>
 
-    <!-- 문제 수 + 생성 -->
     <div class="panel-section">
       <div class="generate-row">
         <div class="q-count-wrap">
@@ -109,24 +147,20 @@
     </div>
   </div>
 
-  <!-- ===== WRONG VERBS COUNTER ===== -->
   <div class="wrong-counter">
-    오답 누적:
-    <span class="wrong-count-badge" id="wrong-count">0</span>
-    개 항목
+    오답 누적: <span class="wrong-count-badge" id="wrong-count">0</span>개
     <button class="btn-clear-wrong" id="btn-clear-wrong">오답 초기화</button>
   </div>
 
   <!-- ===== QUESTIONS ===== -->
   <main id="questions-container" class="questions-container">
-    <div class="empty-state">
-      <p>활용형과 레벨을 선택한 뒤 <strong>문제 생성</strong> 버튼을 누르세요.</p>
-    </div>
+    <div class="empty-state"><p>탭을 선택하고 <strong>문제 생성</strong> 버튼을 누르세요.</p></div>
   </main>
 
 </div>
 
 <script src="verbs.js"></script>
+<script src="grammar.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;700&display=swap');
+
 /* ===== DESIGN TOKENS ===== */
 :root {
   --ink:         #1a1a2e;
@@ -9,7 +11,7 @@
   --rule:        #d8d0c8;
   --rule-light:  #ede8e0;
 
-  --accent:      #c0392b;   /* 빨간 펜 */
+  --accent:      #c0392b;
   --accent-soft: #fdecea;
   --correct:     #1a6b3a;
   --correct-bg:  #eaf5ee;
@@ -22,8 +24,8 @@
 
   --trap: #d97706;
 
-  --font-jp:   'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
-  --font-ui:   'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  --font-jp:   'Shippori Mincho', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  --font-ui:   'IBM Plex Sans KR', 'Apple SD Gothic Neo', sans-serif;
   --font-mono: 'Courier New', monospace;
 
   --radius: 4px;
@@ -128,6 +130,7 @@ body {
   text-transform: uppercase;
   color: var(--ink-faint);
   margin-bottom: 8px;
+  font-family: var(--font-ui);
 }
 
 /* Form selector buttons */
@@ -157,7 +160,7 @@ body {
   background: var(--ink);
   border-color: var(--ink);
   color: var(--paper);
-  font-weight: 600;
+  font-weight: 700;
 }
 .form-btn[data-form="all"].active {
   background: var(--accent);
@@ -179,6 +182,7 @@ body {
   font-size: .84rem;
   cursor: pointer;
   user-select: none;
+  font-family: var(--font-ui);
 }
 .cb-label input { accent-color: var(--ink); width: 15px; height: 15px; }
 
@@ -199,6 +203,7 @@ body {
   align-items: center;
   gap: 6px;
   font-size: .84rem;
+  font-family: var(--font-ui);
 }
 .q-count-wrap select {
   font-family: var(--font-ui);
@@ -239,6 +244,7 @@ body {
   font-size: .8rem;
   color: var(--ink-light);
   margin-bottom: 6px;
+  font-family: var(--font-ui);
 }
 
 .progress-track {
@@ -264,6 +270,7 @@ body {
   font-size: .8rem;
   color: var(--ink-faint);
   margin-bottom: 16px;
+  font-family: var(--font-ui);
 }
 
 .wrong-count-badge {
@@ -288,6 +295,7 @@ body {
   background: transparent;
   color: var(--ink-light);
   cursor: pointer;
+  font-family: var(--font-ui);
 }
 .btn-clear-wrong:hover { color: var(--accent); border-color: var(--accent); }
 
@@ -338,11 +346,6 @@ body {
   min-width: 22px;
 }
 
-.trap-indicator {
-  font-size: .8rem;
-  title: '함정동사';
-}
-
 .jlpt-badge {
   margin-left: auto;
   font-size: .68rem;
@@ -350,6 +353,7 @@ body {
   padding: 1px 6px;
   border-radius: 2px;
   letter-spacing: .06em;
+  font-family: var(--font-ui);
 }
 .jlpt-N5 { background: #dbeafe; color: var(--n5); }
 .jlpt-N4 { background: #ede9fe; color: var(--n4); }
@@ -364,6 +368,7 @@ body {
   border-radius: 2px;
   margin-bottom: 8px;
   letter-spacing: .04em;
+  font-family: var(--font-ui);
 }
 .type-a { background: var(--ink); color: var(--paper); }
 .type-b { background: var(--accent-soft); color: var(--accent); border: 1px solid currentColor; }
@@ -375,22 +380,25 @@ body {
 
 .verb-display {
   font-family: var(--font-jp);
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  line-height: 1.8;
+  line-height: 2;
   color: var(--ink);
   margin-bottom: 2px;
 }
 
 ruby rt {
-  font-size: .55em;
+  font-family: var(--font-jp);
+  font-size: .52em;
   color: var(--ink-faint);
+  font-weight: 400;
 }
 
 .meaning {
   font-size: .8rem;
   color: var(--ink-light);
   margin-bottom: 10px;
+  font-family: var(--font-ui);
 }
 
 .form-hint {
@@ -398,12 +406,14 @@ ruby rt {
   color: var(--ink-light);
   margin-bottom: 10px;
   font-style: italic;
+  font-family: var(--font-jp);
 }
 
 .arrow-prompt {
   font-size: .84rem;
   color: var(--ink-light);
   margin-bottom: 8px;
+  font-family: var(--font-ui);
 }
 
 .form-label {
@@ -437,19 +447,21 @@ ruby rt {
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 4px;
+  font-family: var(--font-ui);
 }
 
 .answer-word {
   font-family: var(--font-jp);
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--ink);
-  line-height: 1.8;
+  line-height: 2;
 }
 
 .answer-reading {
   font-size: .8rem;
   color: var(--ink-light);
+  font-family: var(--font-jp);
 }
 
 .trap-badge {
@@ -462,6 +474,7 @@ ruby rt {
   padding: 2px 8px;
   border-radius: 2px;
   border: 1px solid var(--trap);
+  font-family: var(--font-ui);
 }
 
 /* ===== CARD ACTIONS ===== */
@@ -503,7 +516,7 @@ ruby rt {
   border: 1.5px solid;
   cursor: pointer;
   font-family: var(--font-ui);
-  font-weight: 600;
+  font-weight: 700;
   transition: all .12s;
 }
 
@@ -534,6 +547,7 @@ ruby rt {
   padding: 60px 20px;
   color: var(--ink-faint);
   font-size: .9rem;
+  font-family: var(--font-ui);
 }
 
 /* ===== MOBILE ===== */
@@ -547,8 +561,8 @@ ruby rt {
     gap: 10px;
   }
 
-  .verb-display { font-size: 1.4rem; }
-  .answer-word { font-size: 1.2rem; }
+  .verb-display { font-size: 1.5rem; }
+  .answer-word { font-size: 1.25rem; }
 
   .card-actions { gap: 6px; }
   .generate-row { flex-direction: column; align-items: flex-start; }

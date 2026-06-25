@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>JLPT 동사 활용 트레이너</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <h1 class="site-title">JLPT 動詞活用トレーナー</h1>
+    <span class="site-subtitle">동사 활용 트레이너 · N5 / N4 / N3</span>
+  </div>
+</header>
+
+<div class="app-wrapper">
+
+  <!-- ===== CONTROL PANEL ===== -->
+  <section class="control-panel" aria-label="학습 설정">
+
+    <!-- 활용형 선택 -->
+    <div class="panel-section">
+      <div class="panel-label">활용형 선택</div>
+      <div class="form-grid">
+        <button class="form-btn" data-form="all">종합</button>
+        <button class="form-btn active" data-form="masu">ます형</button>
+        <button class="form-btn" data-form="masen">ません형</button>
+        <button class="form-btn" data-form="mashita">ました형</button>
+        <button class="form-btn" data-form="masen_deshita">ませんでした형</button>
+        <button class="form-btn" data-form="nai">ない형</button>
+        <button class="form-btn" data-form="nakatta">なかった형</button>
+        <button class="form-btn" data-form="te">て형</button>
+        <button class="form-btn" data-form="ta">た형</button>
+        <button class="form-btn" data-form="volitional">의지형</button>
+        <button class="form-btn" data-form="imperative">명령형</button>
+        <button class="form-btn" data-form="negative_imperative">부정명령형</button>
+      </div>
+    </div>
+
+    <!-- JLPT 레벨 -->
+    <div class="panel-section">
+      <div class="panel-label">JLPT 레벨</div>
+      <div class="options-row">
+        <label class="cb-label">
+          <input type="checkbox" class="level-cb" value="N5" checked>
+          <span class="level-n5">N5</span>
+        </label>
+        <label class="cb-label">
+          <input type="checkbox" class="level-cb" value="N4" checked>
+          <span class="level-n4">N4</span>
+        </label>
+        <label class="cb-label">
+          <input type="checkbox" class="level-cb" value="N3" checked>
+          <span class="level-n3">N3</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- 옵션 -->
+    <div class="panel-section">
+      <div class="panel-label">옵션</div>
+      <div class="options-row">
+        <label class="cb-label">
+          <input type="checkbox" id="toggle-furigana" checked>
+          후리가나 표시
+        </label>
+        <label class="cb-label">
+          <input type="checkbox" id="toggle-frequent" checked>
+          빈출 동사 우선
+        </label>
+        <label class="cb-label">
+          <input type="checkbox" id="toggle-trap">
+          ⚠️ 함정동사 강화
+        </label>
+        <label class="cb-label">
+          <input type="checkbox" id="toggle-wrong" checked>
+          오답 우선 출제
+        </label>
+      </div>
+    </div>
+
+    <!-- 문제 수 + 생성 -->
+    <div class="panel-section">
+      <div class="generate-row">
+        <div class="q-count-wrap">
+          <label for="q-count">문제 수</label>
+          <select id="q-count">
+            <option value="20">20문제</option>
+            <option value="40" selected>40문제</option>
+            <option value="60">60문제</option>
+            <option value="80">80문제</option>
+          </select>
+        </div>
+        <button class="btn-generate" id="btn-generate">문제 생성 ▶</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROGRESS ===== -->
+  <div class="progress-bar-wrap">
+    <div class="progress-info">
+      <span>진행 <strong id="progress-text">0 / 0</strong></span>
+      <span id="stats-detail" style="color:var(--ink-faint)">—</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- ===== WRONG VERBS COUNTER ===== -->
+  <div class="wrong-counter">
+    오답 누적:
+    <span class="wrong-count-badge" id="wrong-count">0</span>
+    개 항목
+    <button class="btn-clear-wrong" id="btn-clear-wrong">오답 초기화</button>
+  </div>
+
+  <!-- ===== QUESTIONS ===== -->
+  <main id="questions-container" class="questions-container">
+    <div class="empty-state">
+      <p>활용형과 레벨을 선택한 뒤 <strong>문제 생성</strong> 버튼을 누르세요.</p>
+    </div>
+  </main>
+
+</div>
+
+<script src="verbs.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

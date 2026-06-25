@@ -22,8 +22,8 @@
 
   --trap: #d97706;
 
-  --font-jp:   'Shippori Mincho', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
-  --font-ui:   'IBM Plex Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  --font-jp:   'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'YuGothic', sans-serif;
+  --font-ui:   'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   --font-mono: 'Courier New', monospace;
 
   --radius: 4px;
